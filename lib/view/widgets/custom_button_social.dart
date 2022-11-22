@@ -20,22 +20,28 @@ class CustomButtonSocial extends StatelessWidget {
         borderRadius: BorderRadius.circular(11),
         color: Colors.grey.shade50,
       ),
-      child: FlatButton(
-        onPressed: onPress,
-        shape: new RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(10.0),
-        ),
-        child: Row(
-          children: [
-            Image.asset(imageName),
-            SizedBox(
-              width: 100,
-            ),
-            CustomText(
-              text: text,
-            ),
-          ],
-        ),
+      child: Column(
+        children: [
+          Container(
+              decoration: BoxDecoration(
+                borderRadius: new BorderRadius.circular(10.0),
+              ),
+              child: InkWell(
+                onTap: onPress,
+              )),
+          Row(
+            children: [
+              Image.asset(imageName),
+              SizedBox(
+                width: 100,
+              ),
+              CustomText(
+                text: text,
+              ),
+            ],
+          ),
+          
+        ],
       ),
     );
   }

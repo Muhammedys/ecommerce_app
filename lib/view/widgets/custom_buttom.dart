@@ -18,18 +18,24 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      shape: new RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(10.0),
-      ),
-      padding: EdgeInsets.all(10),
-      onPressed: onPress,
-      color: primaryColor,
-      child: CustomText(
-        alignment: Alignment.center,
-        text: text,
-        color: Colors.white,
-      ),
+    return Column(
+      children: [
+        Container(
+            decoration: BoxDecoration(
+              borderRadius: new BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.all(10),
+            color: primaryColor,
+            child: InkWell(
+              onTap: onPress,
+            )),
+        CustomText(
+          alignment: Alignment.center,
+          text: text,
+          color: Colors.white,
+        ),
+        
+      ],
     );
   }
 }

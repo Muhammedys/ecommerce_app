@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Ecommerce App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -41,26 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-
-
-    <!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
-    <!-- Google Sign-in Section -->
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>E-Commerce</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-	            <string>com.googleusercontent.apps.154365471254-s2sp2qvfgr9mu0vic26mfopau23cmhkk</string>
-	            <string>fb234291428113052</string>
-            </array>
-        </dict>
-    </array>
-    <!-- End of the Google Sign-in Section -->
-    <key>FacebookAppID</key>
-    <string>234291428113052</string>
-    <key>FacebookDisplayName</key>
-    <string>test</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>

@@ -5,7 +5,7 @@ import 'package:ecommerce_app/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class DetailsView extends StatelessWidget {
-  ProductModel model;
+  final ProductModel model;
 
   DetailsView({this.model});
 
