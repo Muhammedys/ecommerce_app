@@ -7,11 +7,12 @@ class CustomButtonSocial extends StatelessWidget {
   final String imageName;
   final Function onPress;
 
-  CustomButtonSocial({
+  const CustomButtonSocial({
+    Key key, 
     @required this.text,
     @required this.imageName,
     @required this.onPress,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CustomButtonSocial extends StatelessWidget {
         children: [
           Container(
               decoration: BoxDecoration(
-                borderRadius: new BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(10.0),
               ),
               child: InkWell(
                 onTap: onPress,
@@ -32,7 +33,7 @@ class CustomButtonSocial extends StatelessWidget {
           Row(
             children: [
               Image.asset(imageName),
-              SizedBox(
+              const SizedBox(
                 width: 100,
               ),
               CustomText(

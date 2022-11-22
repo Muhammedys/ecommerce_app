@@ -6,13 +6,13 @@ import 'package:get/get.dart';
 
 class HomeViewModel extends GetxController {
   ValueNotifier<bool> get loading => _loading;
-  ValueNotifier<bool> _loading = ValueNotifier(false);
+  final ValueNotifier<bool> _loading = ValueNotifier(false);
 
   List<CategoryModel> get categoryModel => _categoryModel;
-  List<CategoryModel> _categoryModel = [];
+  final List<CategoryModel> _categoryModel = [];
 
   List<ProductModel> get productModel => _productModel;
-  List<ProductModel> _productModel = [];
+  final List<ProductModel> _productModel = [];
 
   HomeViewModel() {
     getCategory();

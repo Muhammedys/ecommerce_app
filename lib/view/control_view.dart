@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ControlView extends GetWidget<AuthViewModel> {
+  const ControlView({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -25,8 +27,8 @@ class ControlView extends GetWidget<AuthViewModel> {
       builder: (controller) => BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(top: 25.0),
+              activeIcon: const Padding(
+                padding: EdgeInsets.only(top: 25.0),
                 child: Text("Explore"),
               ),
               label: '',
@@ -39,8 +41,8 @@ class ControlView extends GetWidget<AuthViewModel> {
                 ),
               )),
           BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(top: 25.0),
+              activeIcon: const Padding(
+                padding: EdgeInsets.only(top: 25.0),
                 child: Text("Cart"),
               ),
               label: '',
@@ -53,8 +55,8 @@ class ControlView extends GetWidget<AuthViewModel> {
                 ),
               )),
           BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(top: 25.0),
+              activeIcon: const Padding(
+                padding: EdgeInsets.only(top: 25.0),
                 child: Text("Account"),
               ),
               label: '',

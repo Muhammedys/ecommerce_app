@@ -8,12 +8,12 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthViewModel extends GetxController {
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   String email, password, name;
 
-  Rx<User> _user = Rx<User>();
+  final Rxn<User> _user = Rxn<User>();
 
   String get user => _user.value?.email;
 
@@ -54,7 +54,8 @@ class AuthViewModel extends GetxController {
   }
 
   void facebookSignInMethod() async {
-    final AccessToken result = await FacebookAuth.instance.login();
+    final AccessToken result =
+        (await FacebookAuth.instance.login()) as AccessToken;
 
     final FacebookAuthCredential facebookAuthCredential =
         FacebookAuthProvider.credential(result.token);
@@ -103,7 +104,7 @@ class AuthViewModel extends GetxController {
     await FireStoreUser().addUserToFireStore(UserModel(
       userId: user.user.uid,
       email: user.user.email,
-      name: name == null ? user.user.displayName : name,
+      name: name ?? user.user.displayName,
       pic: '',
     ));
   }

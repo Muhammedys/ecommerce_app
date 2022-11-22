@@ -10,11 +10,12 @@ class CustomButton extends StatelessWidget {
 
   final Function onPress;
 
-  CustomButton({
+  const CustomButton({
+    Key key, 
     @required this.onPress,
     this.text = 'Write text ',
     this.color = primaryColor,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,9 @@ class CustomButton extends StatelessWidget {
       children: [
         Container(
             decoration: BoxDecoration(
-              borderRadius: new BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(10.0),
             ),
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             color: primaryColor,
             child: InkWell(
               onTap: onPress,

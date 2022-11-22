@@ -12,6 +12,8 @@ import '../../constance.dart';
 class LoginView extends GetWidget<AuthViewModel> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  LoginView({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class LoginView extends GetWidget<AuthViewModel> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(
+                  const CustomText(
                     text: "Welcome,",
                     fontSize: 30,
                   ),
@@ -41,7 +43,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                     onTap: () {
                       Get.to(RegisterView());
                     },
-                    child: CustomText(
+                    child: const CustomText(
                       text: "Sign Up",
                       color: primaryColor,
                       fontSize: 18,
@@ -49,15 +51,15 @@ class LoginView extends GetWidget<AuthViewModel> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              CustomText(
+              const CustomText(
                 text: 'Sign in to Continue',
                 fontSize: 14,
                 color: Colors.grey,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
@@ -72,7 +74,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               CustomTextFormField(
@@ -87,15 +89,15 @@ class LoginView extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              CustomText(
+              const CustomText(
                 text: 'Forgot Password?',
                 fontSize: 14,
                 alignment: Alignment.topRight,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CustomButton(
@@ -108,14 +110,14 @@ class LoginView extends GetWidget<AuthViewModel> {
                 },
                 text: 'SIGN IN',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              CustomText(
+              const CustomText(
                 text: '-OR-',
                 alignment: Alignment.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               CustomButtonSocial(
@@ -125,7 +127,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                 },
                 imageName: 'assets/images/facebook.png',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               CustomButtonSocial(

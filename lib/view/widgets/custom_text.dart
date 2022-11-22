@@ -12,14 +12,15 @@ class CustomText extends StatelessWidget {
   final int maxLine;
   final double height;
 
-  CustomText({
+  const CustomText({
+    Key key, 
     this.text = '',
     this.fontSize = 16,
     this.color = Colors.black,
     this.alignment = Alignment.topLeft,
     this.maxLine,
     this.height = 1,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

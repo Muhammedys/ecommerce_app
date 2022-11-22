@@ -16,35 +16,37 @@ class HomeView extends StatelessWidget {
     's',
   ];
 
+  HomeView({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeViewModel>(
       init: Get.find(),
       builder: (controller) => controller.loading.value
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Scaffold(
               body: SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
                   child: Column(
                     children: [
                       _searchTextFormField(),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
-                      CustomText(
+                      const CustomText(
                         text: "Categories",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       _listViewCategory(),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           CustomText(
                             text: "Best Selling",
                             fontSize: 18,
@@ -55,7 +57,7 @@ class HomeView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       _listViewProducts(),
@@ -74,7 +76,7 @@ class HomeView extends StatelessWidget {
         color: Colors.grey.shade200,
       ),
       child: TextFormField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: InputBorder.none,
           prefixIcon: Icon(
             Icons.search,
@@ -87,7 +89,7 @@ class HomeView extends StatelessWidget {
 
   Widget _listViewCategory() {
     return GetBuilder<HomeViewModel>(
-      builder: (controller) => Container(
+      builder: (controller) => SizedBox(
         height: 100,
         child: ListView.separated(
           itemCount: controller.categoryModel.length,
@@ -107,7 +109,7 @@ class HomeView extends StatelessWidget {
                     child: Image.network(controller.categoryModel[index].image),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 CustomText(
@@ -116,7 +118,7 @@ class HomeView extends StatelessWidget {
               ],
             );
           },
-          separatorBuilder: (context, index) => SizedBox(
+          separatorBuilder: (context, index) => const SizedBox(
             width: 20,
           ),
         ),
@@ -126,7 +128,7 @@ class HomeView extends StatelessWidget {
 
   Widget _listViewProducts() {
     return GetBuilder<HomeViewModel>(
-      builder: (controller) => Container(
+      builder: (controller) => SizedBox(
         height: 350,
         child: ListView.separated(
           itemCount: controller.productModel.length,
@@ -138,7 +140,7 @@ class HomeView extends StatelessWidget {
                   model: controller.productModel[index],
                 ));
               },
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width * .4,
                 child: Column(
                   children: [
@@ -147,7 +149,7 @@ class HomeView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.grey.shade100,
                       ),
-                      child: Container(
+                      child: SizedBox(
                           height: 220,
                           width: MediaQuery.of(context).size.width * .4,
                           child: Image.network(
@@ -155,14 +157,14 @@ class HomeView extends StatelessWidget {
                             fit: BoxFit.fill,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     CustomText(
                       text: controller.productModel[index].name,
                       alignment: Alignment.bottomLeft,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Expanded(
@@ -172,12 +174,11 @@ class HomeView extends StatelessWidget {
                         alignment: Alignment.bottomLeft,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     CustomText(
-                      text: controller.productModel[index].price.toString() +
-                          " \$",
+                      text: "${controller.productModel[index].price} \$",
                       color: primaryColor,
                       alignment: Alignment.bottomLeft,
                     ),
@@ -186,7 +187,7 @@ class HomeView extends StatelessWidget {
               ),
             );
           },
-          separatorBuilder: (context, index) => SizedBox(
+          separatorBuilder: (context, index) => const SizedBox(
             width: 20,
           ),
         ),

@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 class RegisterView extends GetWidget<AuthViewModel> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  RegisterView({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
             onTap: () {
               Get.off(LoginView());
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.black,
             )),
@@ -35,11 +37,11 @@ class RegisterView extends GetWidget<AuthViewModel> {
           key: _formKey,
           child: Column(
             children: [
-              CustomText(
+              const CustomText(
                 text: "Sign Up,",
                 fontSize: 30,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
@@ -54,7 +56,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
@@ -69,7 +71,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               CustomTextFormField(
@@ -84,7 +86,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CustomButton(
@@ -97,7 +99,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 },
                 text: 'SIGN Up',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
             ],
