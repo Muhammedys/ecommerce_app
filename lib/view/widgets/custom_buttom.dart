@@ -10,7 +10,15 @@ class CustomButton extends StatelessWidget {
 
   final Function onPress;
 
-  const CustomButton({
+  final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+    backgroundColor: primaryColor,
+    minimumSize: const Size(88, 36),
+    padding: const EdgeInsets.all(10),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+  );
+  CustomButton({
     Key key, 
     @required this.onPress,
     this.text = 'Write text ',
@@ -19,24 +27,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            padding: const EdgeInsets.all(10),
-            color: primaryColor,
-            child: InkWell(
-              onTap: onPress,
-            )),
-        CustomText(
-          alignment: Alignment.center,
-          text: text,
-          color: Colors.white,
-        ),
-        
-      ],
+    return OutlinedButton(
+      style: outlineButtonStyle,
+      onPressed: onPress,
+      child: CustomText(
+        alignment: Alignment.center,
+        text: text,
+        color: Colors.white,
+      ),
     );
   }
 }

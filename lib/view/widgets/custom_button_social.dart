@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/constance.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_text.dart';
@@ -7,7 +8,14 @@ class CustomButtonSocial extends StatelessWidget {
   final String imageName;
   final Function onPress;
 
-  const CustomButtonSocial({
+  final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+    backgroundColor: primaryColor,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+  );
+
+  CustomButtonSocial({
     Key key, 
     @required this.text,
     @required this.imageName,
@@ -21,28 +29,20 @@ class CustomButtonSocial extends StatelessWidget {
         borderRadius: BorderRadius.circular(11),
         color: Colors.grey.shade50,
       ),
-      child: Column(
-        children: [
-          Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: InkWell(
-                onTap: onPress,
-              )),
-          Row(
-            children: [
-              Image.asset(imageName),
-              const SizedBox(
-                width: 100,
-              ),
-              CustomText(
-                text: text,
-              ),
-            ],
-          ),
-          
-        ],
+      child: OutlinedButton(
+        onPressed: onPress,
+        style: outlineButtonStyle,
+        child: Row(
+          children: [
+            Image.asset(imageName),
+            const SizedBox(
+              width: 100,
+            ),
+            CustomText(
+              text: text,
+            ),
+          ],
+        ),
       ),
     );
   }
