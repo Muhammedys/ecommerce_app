@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/constance.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_text.dart';
@@ -9,7 +8,6 @@ class CustomButtonSocial extends StatelessWidget {
   final Function onPress;
 
   final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
-    backgroundColor: primaryColor,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),
